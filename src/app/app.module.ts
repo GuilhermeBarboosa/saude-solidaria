@@ -19,6 +19,10 @@ import { ButtonYellowComponent } from './components/button-yellow/button-yellow.
 import { ToastrModule } from 'ngx-toastr';
 import { TableEspecComponent } from './feature/crud/especialidades/table-espec/table-espec.component';
 import { CreateEspecComponent } from './feature/crud/especialidades/create-espec/create-espec.component';
+import {MatTableModule} from '@angular/material/table';
+import { NgxMaskModule } from 'ngx-mask';
+import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -35,14 +39,21 @@ import { CreateEspecComponent } from './feature/crud/especialidades/create-espec
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MatIconModule,
+    BrowserAnimationsModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false // ao salvar, vai manter a mascara
+    }),
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    MatTableModule,
+    MatPaginatorModule,
     MatDialogModule,
-    MatNativeDateModule,
     BrowserAnimationsModule,
+    MatNativeDateModule,
+    HttpClientModule,
+    AppRoutingModule,
+    MatIconModule,
     ToastrModule.forRoot(),
   ],
   providers: [],
