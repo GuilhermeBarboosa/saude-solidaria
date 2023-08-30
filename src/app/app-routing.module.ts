@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './feature/home/home.component';
 import { TableEspecComponent } from './feature/crud/especialidades/table-espec/table-espec.component';
 import { CreateEspecComponent } from './feature/crud/especialidades/create-espec/create-espec.component';
+import { InfoEspecComponent } from './feature/crud/especialidades/info-espec/info-espec.component';
+import { EditEspecComponent } from './feature/crud/especialidades/edit-espec/edit-espec.component';
 
 export const routes: Routes = [
   // {
@@ -24,18 +26,15 @@ export const routes: Routes = [
         path: 'register',
         component: CreateEspecComponent,
       },
-      // {
-      //   path: 'racha/:id',
-      //   component: TableJogosComponent,
-      // },
-      // {
-      //   path: 'edit/:id',
-      //   component: EditJogosComponent,
-      // },
-      // {
-      //   path: 'info/:id',
-      //   component: InfoJogosComponent,
-      // },
+      {
+        path: 'info/:id',
+        component: InfoEspecComponent,
+      },
+      {
+        path: 'edit/:id',
+        component: EditEspecComponent,
+      },
+
     ],
     // canActivate: [LoginGuardService],
   },

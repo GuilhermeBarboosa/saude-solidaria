@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="flex">
+  <app-sidebar></app-sidebar>
+
+  <form class="h-full w-full m-5" [formGroup]="formulario" *ngIf="formulario">
+
+      <div class="flex justify-between">
+        <p class="text-black font-medium justify-start text-lg font-bold">INFO
+          DA POSIÇÃO</p>
+
+      </div>
+
+      <div class="flex justify-between">
+        <app-button-green [value] = 'Voltar' (click)="return()"></app-button-green>
+        <app-button-yellow [value] = 'Editar' (click)="edit()"></app-button-yellow>
+      </div>
+
+      <div class="">
+        <label class="block text-sm text-black" for="nome">Código</label>
+        <input formControlName="id" class="default-input text-center p-2.5" type="text" id="nome" required>
+      </div>
+
+      <form class="h-full w-full" [formGroup]="formulario" *ngIf="formulario">
+        <div>
+          <div class="grid">
+            <div >
+              <label class="block text-sm text-black" for="especialidade">Especialidade</label>
+              <input
+                formControlName="especialidade"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="especialidade"
+                aria-label="especialidade"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </form>
+
+</div>

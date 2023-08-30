@@ -39,8 +39,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .default-input{
-  background-color: #ffffff;
-  border: 1px solid #575757;
+  background-color: #f7f7f7;
+  border: 1px solid #bdbdbd;
   color: #202020;
   font-size: medium;
   border-radius: 5px;

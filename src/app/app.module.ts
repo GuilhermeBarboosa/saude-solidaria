@@ -23,6 +23,8 @@ import {MatTableModule} from '@angular/material/table';
 import { NgxMaskModule } from 'ngx-mask';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { InfoEspecComponent } from './feature/crud/especialidades/info-espec/info-espec.component';
+import { EditEspecComponent } from './feature/crud/especialidades/edit-espec/edit-espec.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ButtonRedComponent,
     ButtonYellowComponent,
     TableEspecComponent,
-    CreateEspecComponent
+    CreateEspecComponent,
+    InfoEspecComponent,
+    EditEspecComponent
   ],
   imports: [
     BrowserModule,
