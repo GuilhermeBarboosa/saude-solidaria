@@ -2,11 +2,20 @@
 <nav class="border-gray-200 px-2 sm:px-4 py-2.5 navbar">
   <div class="flex flex-wrap items-center justify-end mx-auto">
   <div class="flex">
+   <div *ngIf="jwt != null">
     <button (click)="logout()" class="flex button-logout">
       <span class="icon-button material-symbols-outlined">
         logout
       </span>
     </button>
+   </div>
+
+   <div *ngIf="jwt == null">
+    <button (click)="login()" class="rounded-lg text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+      Entrar
+    </button>
+   </div>
+
   </div>
   </div>
 </nav>

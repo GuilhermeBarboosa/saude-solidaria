@@ -1,0 +1,38 @@
+
+    <section class="flex items-center justify-center h-screen bg-gray-100 dark:bg-gray-900">
+      <div class=" width-50">
+          <div class="w-full  bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+              <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                  <h1 class="text-xl font-bold leading-tight tracking-tight text-green-400 md:text-2xl dark:text-white">
+                      Painel para médicos
+                  </h1>
+                  <form class="space-y-4 md:space-y-6" [formGroup]="loginForm">
+                      <div>
+                        <label for="email" class="block text-md font-medium text-gray-500">Email</label>
+                        <input formControlName="email" type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-green-400 block w-full p-2.5"  required="">
+                        <p *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="text-red-500 my-0">Email obrigatório</p>
+                      </div>
+                      <div>
+                        <label for="senha" class="block text-md font-medium text-gray-500">Email</label>
+                        <input formControlName="senha" type="password" name="senha" id="senha" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-green-400 block w-full p-2.50" required="">
+                        <p *ngIf="loginForm.get('senha')?.errors && loginForm.get('senha')?.touched" class="text-red-500">Senha obrigatória</p>
+                      </div>
+                      <div class="flex items-center justify-between">
+                          <div class="flex items-start">
+                            <a href="#" class="text-sm font-medium text-gray-500 hover:underline">Forgot password?</a>
+                          </div>
+
+                          <div class="flex items-end">
+                            <button (click)="login()" type="button" class="rounded-lg text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">Entrar</button>
+                          </div>
+
+                      </div>
+                      <!-- <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button> -->
+                      <!-- <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                          Não tem conta? <a routerLink="/register" routerLinkActive="active" class="font-medium text-green-400 hover:underline">Cadastre-se</a>
+                      </p> -->
+                  </form>
+              </div>
+          </div>
+      </div>
+    </section>

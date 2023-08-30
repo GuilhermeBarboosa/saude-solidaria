@@ -33,8 +33,8 @@ export class EspecialidadeService {
     return this.http.put(`${this.urlEspec}/${id}`, espec);
   }
 
-  ativar(espec: EspecialidadeInput, id: number) {
-    return this.http.put(`${this.urlEspec}/ativar/${id}`, espec);
+  ativar(id: number) {
+    return this.http.put(`${this.urlEspec}/ativar/${id}`, null);
   }
 
   delete(id: number) {

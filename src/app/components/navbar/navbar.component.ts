@@ -1,6 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NotifierService } from 'src/app/shared/notifier.service';
+import { LoginService } from '../../routes/login.service';
+import { TokenJwtService } from 'src/app/shared/token-jwt.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,11 +11,23 @@ import { NotifierService } from 'src/app/shared/notifier.service';
 export class NavbarComponent implements OnInit {
   Logout = 'Logout';
 
-  constructor(private router: Router, private notifier: NotifierService) {}
+  jwt: any = null;
+  role = localStorage.getItem('role');
+  constructor(
+    private router: Router,
+    private notifier: NotifierService,
+    private loginService: LoginService,
+    private tokenJwtService: TokenJwtService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+     this.jwt = this.tokenJwtService.getToken();}
 
   logout() {
-    // this.loginService.logout();
+    this.loginService.logout();
+  }
+
+  login(){
+    this.router.navigateByUrl(`login`);
   }
 }

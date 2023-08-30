@@ -1,0 +1,14 @@
+.mensagem__erro {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+}
+
+.width-50{
+  width: 30%;
+}
+
+
+input{
+  margin-bottom: 5px;
+}

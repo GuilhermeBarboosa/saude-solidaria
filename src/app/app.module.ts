@@ -29,6 +29,8 @@ import { TableLocalComponent } from './feature/crud/local/table-local/table-loca
 import { CreateLocalComponent } from './feature/crud/local/create-local/create-local.component';
 import { InfoLocalComponent } from './feature/crud/local/info-local/info-local.component';
 import { EditLocalComponent } from './feature/crud/local/edit-local/edit-local.component';
+import { LoginComponent } from './feature/page-login/login/login.component';
+import { RegisterComponent } from './feature/page-login/register/register.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,9 @@ import { EditLocalComponent } from './feature/crud/local/edit-local/edit-local.c
     ButtonGreenComponent,
     ButtonRedComponent,
     ButtonYellowComponent,
+    //Login
+    LoginComponent,
+    RegisterComponent,
     //Espec
     TableEspecComponent,
     CreateEspecComponent,

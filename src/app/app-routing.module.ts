@@ -9,6 +9,8 @@ import { TableLocalComponent } from './feature/crud/local/table-local/table-loca
 import { CreateLocalComponent } from './feature/crud/local/create-local/create-local.component';
 import { InfoLocalComponent } from './feature/crud/local/info-local/info-local.component';
 import { EditLocalComponent } from './feature/crud/local/edit-local/edit-local.component';
+import { LoginComponent } from './feature/page-login/login/login.component';
+import { RegisterComponent } from './feature/page-login/register/register.component';
 
 export const routes: Routes = [
   // {
@@ -18,6 +20,26 @@ export const routes: Routes = [
   //       (m) => m.AuthenticationModule
   //     ),
   // },
+  {
+    path: 'login',
+    children: [
+      {
+        path: '',
+        component: LoginComponent,
+      },
+    ],
+    // canActivate: [LoginGuardService],
+  },
+  {
+    path: 'register',
+    children: [
+      {
+        path: '',
+        component: RegisterComponent,
+      },
+    ],
+    // canActivate: [LoginGuardService],
+  },
   {
     path: 'especialidade',
     children: [
@@ -69,7 +91,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
 ];

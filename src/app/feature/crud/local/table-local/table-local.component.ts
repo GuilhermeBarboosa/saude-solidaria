@@ -12,14 +12,22 @@ import { NotifierService } from 'src/app/shared/notifier.service';
 @Component({
   selector: 'app-table-local',
   templateUrl: './table-local.component.html',
-  styleUrls: ['./table-local.component.css']
+  styleUrls: ['./table-local.component.css'],
 })
 export class TableLocalComponent implements OnInit, AfterViewInit {
-
   value?: String;
   mandaFiltroTrue = 'Ativar';
   mandaFiltroFalse = 'Excluir';
-  displayedColumns: string[] = ['id', 'nome_local', 'rua', 'numero', 'bairro',  'status', 'info', 'excluir'];
+  displayedColumns: string[] = [
+    'id',
+    'nome_local',
+    'rua',
+    'numero',
+    'bairro',
+    'status',
+    'info',
+    'excluir',
+  ];
   Adicionar = 'Adicionar';
   Info = 'Info';
 
@@ -55,10 +63,14 @@ export class TableLocalComponent implements OnInit, AfterViewInit {
   ativar(local: Local) {
     let localInput = new LocalInput(local);
 
-    this.localService.ativar(localInput, local.id!).subscribe((data) => {
-      this.notifier.ShowSuccess('Local ativada com sucesso!');
-      window.location.reload();
-    });
+    this.localService.ativar(local.id!).subscribe(
+      (data) => {
+        this.notifier.ShowSuccess('Local ativada com sucesso!');
+      },
+      (error) => {
+        this.notifier.ShowError('Erro ao ativar local!');
+      }
+    );
 
     window.location.reload();
   }
@@ -66,7 +78,7 @@ export class TableLocalComponent implements OnInit, AfterViewInit {
   openDialog(local: any): void {
     let dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
-      data: { value: this.value, nomeComponente: "local" },
+      data: { value: this.value, nomeComponente: 'local' },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -107,5 +119,4 @@ export class TableLocalComponent implements OnInit, AfterViewInit {
   getByAtivo() {
     this.localArray.filter = 'Ativo';
   }
-
 }

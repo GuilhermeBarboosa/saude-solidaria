@@ -33,8 +33,8 @@ export class LocalService {
     return this.http.put(`${this.urlLocal}/${id}`, local);
   }
 
-  ativar(local: LocalInput, id: number) {
-    return this.http.put(`${this.urlLocal}/ativar/${id}`, local);
+  ativar(id: number) {
+    return this.http.put(`${this.urlLocal}/ativar/${id}`, null);
   }
 
   delete(id: number) {
