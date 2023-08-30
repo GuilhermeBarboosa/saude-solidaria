@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+
+<div class="flex">
+  <app-sidebar></app-sidebar>
+
+  <form class="h-full w-full m-5" [formGroup]="formulario" *ngIf="formulario">
+    <div class="flex justify-between">
+      <p class="text-black font-medium justify-start text-lg font-bold">
+        REGISTRE A ESPECIALIDADE
+      </p>
+    </div>
+
+    <form class="h-full w-full" [formGroup]="formulario" *ngIf="formulario">
+      <div>
+        <div class="grid">
+          <div >
+            <label class="block text-sm text-black" for="nome_local">Local</label>
+            <input
+              formControlName="nome_local"
+              class="default-input w-full p-2.5"
+              type="text"
+              id="nome_local"
+              aria-label="nome_local"
+              required
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="grid grid-cols-6 mt-2">
+          <div class="mr-4 col-span-3" >
+            <label class="block text-sm text-black" for="rua">Rua</label>
+            <input
+              formControlName="rua"
+              class="default-input w-full p-2.5"
+              type="text"
+              id="rua"
+              aria-label="rua"
+              required
+            />
+          </div>
+
+          <div class="mr-4">
+            <label class="block text-sm text-black" for="numero">Número</label>
+            <input
+              formControlName="numero"
+              class="default-input w-full p-2.5"
+              type="text"
+              id="numero"
+              aria-label="numero"
+              required
+            />
+          </div>
+
+          <div class="col-span-2">
+            <label class="block text-sm text-black" for="bairro"
+              >Bairro</label
+            >
+            <input
+              formControlName="bairro"
+              class="default-input w-full p-2.5"
+              type="text"
+              id="bairro"
+              aria-label="bairro"
+              required
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+    <div class="items-center flex justify-between my-2">
+      <div>
+        <app-button-red [value]="Nao" (click)="return()"></app-button-red>
+      </div>
+
+      <div class="align-end">
+        <app-button-green [value]="Sim" (click)="save()"></app-button-green>
+      </div>
+    </div>
+  </form>
+</div>

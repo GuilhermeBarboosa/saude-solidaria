@@ -25,6 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { InfoEspecComponent } from './feature/crud/especialidades/info-espec/info-espec.component';
 import { EditEspecComponent } from './feature/crud/especialidades/edit-espec/edit-espec.component';
+import { TableLocalComponent } from './feature/crud/local/table-local/table-local.component';
+import { CreateLocalComponent } from './feature/crud/local/create-local/create-local.component';
+import { InfoLocalComponent } from './feature/crud/local/info-local/info-local.component';
+import { EditLocalComponent } from './feature/crud/local/edit-local/edit-local.component';
 
 @NgModule({
   declarations: [
@@ -36,10 +40,16 @@ import { EditEspecComponent } from './feature/crud/especialidades/edit-espec/edi
     ButtonGreenComponent,
     ButtonRedComponent,
     ButtonYellowComponent,
+    //Espec
     TableEspecComponent,
     CreateEspecComponent,
     InfoEspecComponent,
-    EditEspecComponent
+    EditEspecComponent,
+    //Local
+    TableLocalComponent,
+    CreateLocalComponent,
+    InfoLocalComponent,
+    EditLocalComponent
   ],
   imports: [
     BrowserModule,

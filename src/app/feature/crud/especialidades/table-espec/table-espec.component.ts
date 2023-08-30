@@ -85,16 +85,16 @@ export class TableEspecComponent implements OnInit, AfterViewInit{
 
   initTable() {
     this.especialidadeService.getAll().subscribe((data: any) => {
-      var usersResponse = JSON.parse(JSON.stringify(data));
+      var especResponse = JSON.parse(JSON.stringify(data));
 
-      usersResponse.map((especialidade: Especialidade) => {
+      especResponse.map((especialidade: Especialidade) => {
         if (especialidade.actived) {
           especialidade.actived = 'Ativo';
         } else {
           especialidade.actived = 'Desativado';
         }
       });
-      this.especialidadeArray.data = usersResponse;
+      this.especialidadeArray.data = especResponse;
       this.especialidadeArray.filter = 'Ativo';
     });
   }
