@@ -10,11 +10,13 @@ export class DialogComponent {
 
   Sim = 'Sim';
   Nao = 'Não';
-  
+  nome: any;
+
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       data.value = true;
+      data.nomeComponente = data.nomeComponente
     }
 
   onNoClick(): void {

@@ -65,7 +65,7 @@ export class TableEspecComponent implements OnInit, AfterViewInit{
   openDialog(especialidade: any): void {
     let dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
-      data: { value: this.value },
+      data: { value: this.value, nomeComponente: "especialidade" },
     });
 
     dialogRef.afterClosed().subscribe((result) => {

@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Deseja realmente excluir?</h1>
+<h1 mat-dialog-title>Deseja realmente excluir a {{data.nomeComponente}}?</h1>
 <div mat-dialog-actions class="center">
   <app-button-red [value] = "Nao" mat-button (click)="onNoClick()">Não</app-button-red>
   <app-button-green [value] = "Sim" mat-button [mat-dialog-close]="data.value" cdkFocusInitial>Sim</app-button-green>
