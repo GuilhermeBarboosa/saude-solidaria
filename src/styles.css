@@ -50,3 +50,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .default-input:focus{
   border: 1px solid #48ff00;
 }
+
+.primary-color-text{
+  color: #4862c3;
+}
+
+.primary-color-bg{
+  background-color: #4862c3;
+}
