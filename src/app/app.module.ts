@@ -31,6 +31,10 @@ import { InfoLocalComponent } from './feature/crud/local/info-local/info-local.c
 import { EditLocalComponent } from './feature/crud/local/edit-local/edit-local.component';
 import { LoginComponent } from './feature/page-login/login/login.component';
 import { RegisterComponent } from './feature/page-login/register/register.component';
+import { TableUserComponent } from './feature/crud/user/table-user/table-user.component';
+import { CreateUserComponent } from './feature/crud/user/create-user/create-user.component';
+import { EditUserComponent } from './feature/crud/user/edit-user/edit-user.component';
+import { InfoUserComponent } from './feature/crud/user/info-user/info-user.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,11 @@ import { RegisterComponent } from './feature/page-login/register/register.compon
     //Login
     LoginComponent,
     RegisterComponent,
+    //User
+    TableUserComponent,
+    CreateUserComponent,
+    EditUserComponent,
+    InfoUserComponent,
     //Espec
     TableEspecComponent,
     CreateEspecComponent,

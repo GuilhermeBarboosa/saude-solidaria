@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home']);
         },
         (error: any) => {
-          this.notifier.ShowError(error.error);
+          this.notifier.ShowError('Login ou senha inválidos');
         }
       );
     }

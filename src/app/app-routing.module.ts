@@ -11,6 +11,10 @@ import { InfoLocalComponent } from './feature/crud/local/info-local/info-local.c
 import { EditLocalComponent } from './feature/crud/local/edit-local/edit-local.component';
 import { LoginComponent } from './feature/page-login/login/login.component';
 import { RegisterComponent } from './feature/page-login/register/register.component';
+import { TableUserComponent } from './feature/crud/user/table-user/table-user.component';
+import { CreateUserComponent } from './feature/crud/user/create-user/create-user.component';
+import { InfoUserComponent } from './feature/crud/user/info-user/info-user.component';
+import { EditUserComponent } from './feature/crud/user/edit-user/edit-user.component';
 
 export const routes: Routes = [
   // {
@@ -36,6 +40,28 @@ export const routes: Routes = [
       {
         path: '',
         component: RegisterComponent,
+      },
+    ],
+    // canActivate: [LoginGuardService],
+  },
+  {
+    path: 'user',
+    children: [
+      {
+        path: '',
+        component: TableUserComponent,
+      },
+      {
+        path: 'register',
+        component: CreateUserComponent,
+      },
+      {
+        path: 'info/:id',
+        component: InfoUserComponent,
+      },
+      {
+        path: 'edit/:id',
+        component: EditUserComponent,
       },
     ],
     // canActivate: [LoginGuardService],
@@ -91,7 +117,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'user',
     pathMatch: 'full',
   },
 ];
