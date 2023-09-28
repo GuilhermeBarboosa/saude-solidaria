@@ -1,4 +1,68 @@
 <div>
   <app-navbar></app-navbar>
+</div>
+
+<div class="flex">
+
+  <div class="h-full w-full m-5">
+
+    <div class="flex justify-end m-5">
+
+      <div class="">
+        <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Filter" class="block w-full p-2 pl-10 text-sm text-black border border-green-300 rounded-lg bg-blue-100"  required>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="h-full w-full p-4 " >
+      <mat-table mat-table [dataSource]="consultaArray" class="border-2 border-lime-400">
+
+        <ng-container matColumnDef="nome_medico">
+          <mat-header-cell mat-header-cell *matHeaderCellDef> Médico </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let consulta"> {{consulta.nome_medico}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="especialidade">
+          <mat-header-cell mat-header-cell *matHeaderCellDef> Especialização </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let consulta"> {{consulta.especialidade}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="nome_local">
+          <mat-header-cell mat-header-cell *matHeaderCellDef> Local </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let consulta"> {{consulta.nome_local}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="data">
+          <mat-header-cell mat-header-cell *matHeaderCellDef> Data </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let consulta"> {{consulta.data}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="info" cl>
+          <mat-header-cell mat-header-cell *matHeaderCellDef> </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let consulta">
+            <app-button-yellow [value] = "Info" (click)="info(consulta)" value="{{consulta.id}}" class="p-2"></app-button-yellow>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+      <mat-paginator #paginator
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      [showFirstLastButtons]="true">
+    </mat-paginator>
+
+    </div>
+
+
+  </div>
 
 </div>
+
