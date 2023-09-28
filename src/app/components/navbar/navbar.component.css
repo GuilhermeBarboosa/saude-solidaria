@@ -16,3 +16,14 @@
   color: white;
   font-size: large;
 }
+
+.bg-sky-500{
+  background-color: #0284c7;
+}
+
+li{
+  display: flex !important;
+  align-items: center !important;
+  justify-self: center !important;
+  color: white !important;
+}

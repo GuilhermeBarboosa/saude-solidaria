@@ -8,6 +8,8 @@ import { UserService } from '../../../../routes/user.service';
 import { RoleService } from 'src/app/routes/role.service';
 import { User } from 'src/app/interfaces/dtos/user';
 import { Role } from 'src/app/interfaces/dtos/role';
+import { UserMedicoService } from 'src/app/routes/userMedico.service';
+import { UserMedico } from 'src/app/interfaces/dtos/UserMedico';
 
 @Component({
   selector: 'app-info-user',
@@ -16,7 +18,7 @@ import { Role } from 'src/app/interfaces/dtos/role';
 })
 export class InfoUserComponent implements OnInit {
   userForm!: FormGroup;
-  user?: User;
+  user?: UserMedico;
   roleArray? : Role[]
   isDisabled = true;
   id = this.activedRouter.snapshot.params['id'];
@@ -25,7 +27,7 @@ export class InfoUserComponent implements OnInit {
 
   constructor(
     private activedRouter: ActivatedRoute,
-    private userService: UserService,
+    private userService: UserMedicoService,
     private roleService: RoleService,
     private router: Router,
     private utils: UtilsService,
@@ -61,11 +63,11 @@ export class InfoUserComponent implements OnInit {
     this.userForm = this.formBuilder.group({
       id: [{ value: this.user?.id, disabled: this.isDisabled }],
       nome: [
-        { value: this.user?.nome, disabled: this.isDisabled },
+        { value: this.user?.nome_user, disabled: this.isDisabled },
         Validators.required,
       ],
       email: [
-        { value: this.user?.email, disabled: this.isDisabled },
+        { value: this.user?.email_user, disabled: this.isDisabled },
         Validators.required,
       ],
       role: [
@@ -73,7 +75,15 @@ export class InfoUserComponent implements OnInit {
         Validators.required,
       ],
       cpf: [
-        { value: this.user?.cpf, disabled: this.isDisabled },
+        { value: this.user?.cpf_user, disabled: this.isDisabled },
+        Validators.required,
+      ],
+      crm: [
+        { value: this.user?.crm, disabled: this.isDisabled },
+        Validators.required,
+      ],
+      especialidade: [
+        { value: this.user?.especialidade, disabled: this.isDisabled },
         Validators.required,
       ],
       created: [

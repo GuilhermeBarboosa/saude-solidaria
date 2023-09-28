@@ -4,10 +4,12 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
-import { User } from 'src/app/interfaces/dtos/user';
 import { UserInput } from 'src/app/interfaces/input/userInput';
 import { UserService } from 'src/app/routes/user.service';
 import { NotifierService } from 'src/app/shared/notifier.service';
+import { UserMedicoService } from '../../../../routes/userMedico.service';
+import { UserMedico } from 'src/app/interfaces/dtos/UserMedico';
+import { UserMedicoInput } from 'src/app/interfaces/input/userMedicoInput';
 
 @Component({
   selector: 'app-table-user',
@@ -23,7 +25,7 @@ export class TableUserComponent implements OnInit, AfterViewInit {
     'id',
     'nome',
     'email',
-    'cpf',
+    'crm',
     'role',
     'status',
     'info',
@@ -32,11 +34,11 @@ export class TableUserComponent implements OnInit, AfterViewInit {
   Adicionar = "Adicionar";
   Info = "Info";
 
-  usersArray = new MatTableDataSource<User>;
+  usersArray = new MatTableDataSource<UserMedico>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
-    private userService: UserService,
+    private userService: UserMedicoService,
     public dialog: MatDialog,
     private router: Router,
     private notifier: NotifierService,
@@ -57,15 +59,15 @@ export class TableUserComponent implements OnInit, AfterViewInit {
     this.usersArray.filter = filterValue;
   }
 
-  info(user: User) {
+  info(user: UserMedico) {
     this.router.navigateByUrl(`user/info/${user.id}`);
   }
 
-  ativar(user: User) {
+  ativar(user: UserMedico) {
 
-    let userInput = new UserInput(user);
+    let userInput = new UserMedicoInput(user);
 
-    this.userService.ativar(userInput, user.id!).subscribe(
+    this.userService.ativar(user.id!).subscribe(
       (data) => {
         this.notifier.ShowSuccess('Usuário ativado com sucesso!');
         window.location.reload();
@@ -100,7 +102,7 @@ export class TableUserComponent implements OnInit, AfterViewInit {
     this.userService.getAll().subscribe((data) => {
       var usersResponse = JSON.parse(JSON.stringify(data));
 
-      usersResponse.map((user: User) => {
+      usersResponse.map((user: UserMedico) => {
         if (user.actived) {
           user.actived = 'Ativo';
         } else {

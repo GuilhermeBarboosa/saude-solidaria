@@ -89,6 +89,39 @@
 
 
           </div>
+
+          <div class="grid grid-cols-4">
+
+            <div class="col-span-2 mr-4">
+              <label class="block text-sm text-black" for="cpf">CRM</label>
+              <input
+                formControlName="crm"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="nome"
+                aria-label="nome"
+                required
+              />
+            </div>
+
+            <div class="col-span-2">
+              <label
+              class="block text-sm text-black"
+                for="first_name"
+                >Especialização</label
+              >
+              <select
+                id="posicao"
+                formControlName="especialidade"
+                class="default-input w-full p-2.5"
+              >
+                <option value="" disabled selected>Selecione a especialização</option>
+                <option *ngFor="let espec of especArray" [value]="espec.id">
+                  {{ espec.especialidade }}
+                </option>
+              </select>
+            </div>
+          </div>
         </div>
       </form>
 

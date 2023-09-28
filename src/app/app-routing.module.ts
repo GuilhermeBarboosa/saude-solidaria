@@ -15,6 +15,7 @@ import { TableUserComponent } from './feature/crud/user/table-user/table-user.co
 import { CreateUserComponent } from './feature/crud/user/create-user/create-user.component';
 import { InfoUserComponent } from './feature/crud/user/info-user/info-user.component';
 import { EditUserComponent } from './feature/crud/user/edit-user/edit-user.component';
+import { ConsultapublicoComponent } from './feature/publico/consultapublico/consultapublico.component';
 
 export const routes: Routes = [
   // {
@@ -89,6 +90,24 @@ export const routes: Routes = [
     // canActivate: [LoginGuardService],
   },
   {
+    path: 'cms',
+    children: [
+      {
+        path: '',
+        component: TableLocalComponent,
+      },
+    ]
+  },
+  {
+    path: 'consultapublico',
+    children: [
+      {
+        path: '',
+        component: ConsultapublicoComponent,
+      },
+    ]
+  },
+  {
     path: 'local',
     children: [
       {
@@ -117,7 +136,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'user',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
 ];

@@ -53,17 +53,17 @@
 
         <ng-container matColumnDef="nome">
           <mat-header-cell mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-          <mat-cell mat-cell *matCellDef="let user"> {{user.nome}} </mat-cell>
+          <mat-cell mat-cell *matCellDef="let user"> {{user.nome_user}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="email">
           <mat-header-cell mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-          <mat-cell mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+          <mat-cell mat-cell *matCellDef="let user"> {{user.email_user}} </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="cpf">
-          <mat-header-cell mat-header-cell *matHeaderCellDef> Cpf </mat-header-cell>
-          <mat-cell mat-cell *matCellDef="let user"> {{user.cpf}} </mat-cell>
+        <ng-container matColumnDef="crm">
+          <mat-header-cell mat-header-cell *matHeaderCellDef> CRM </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let user"> {{user.crm}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="role">
