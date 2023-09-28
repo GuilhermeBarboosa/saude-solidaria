@@ -36,6 +36,7 @@ import { CreateUserComponent } from './feature/crud/user/create-user/create-user
 import { EditUserComponent } from './feature/crud/user/edit-user/edit-user.component';
 import { InfoUserComponent } from './feature/crud/user/info-user/info-user.component';
 import { ConsultapublicoComponent } from './feature/publico/consultapublico/consultapublico.component';
+import { InfoConsultapublicaComponent } from './feature/publico/info-consultapublica/info-consultapublica.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ConsultapublicoComponent } from './feature/publico/consultapublico/cons
     InfoLocalComponent,
     EditLocalComponent,
     //ConsultaPublico
-    ConsultapublicoComponent
+    ConsultapublicoComponent,
+    InfoConsultapublicaComponent
   ],
   imports: [
     BrowserModule,

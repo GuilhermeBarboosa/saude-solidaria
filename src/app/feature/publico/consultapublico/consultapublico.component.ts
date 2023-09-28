@@ -3,10 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Consulta } from 'src/app/interfaces/dtos/Consulta';
 import { ConsultaService } from 'src/app/routes/consulta.service';
 import { NotifierService } from 'src/app/shared/notifier.service';
 import { UtilsService } from '../../../shared/utils.service';
+import { Consulta } from 'src/app/interfaces/dtos/consulta';
 
 @Component({
   selector: 'app-consultapublico',
@@ -54,7 +54,7 @@ export class ConsultapublicoComponent implements OnInit {
   }
 
   info(consulta: Consulta) {
-    this.router.navigateByUrl(`consultaPublico/info/${consulta.id}`);
+    this.router.navigateByUrl(`infoconsulta/${consulta.id}`);
   }
 
 

@@ -16,6 +16,7 @@ import { CreateUserComponent } from './feature/crud/user/create-user/create-user
 import { InfoUserComponent } from './feature/crud/user/info-user/info-user.component';
 import { EditUserComponent } from './feature/crud/user/edit-user/edit-user.component';
 import { ConsultapublicoComponent } from './feature/publico/consultapublico/consultapublico.component';
+import { InfoConsultapublicaComponent } from './feature/publico/info-consultapublica/info-consultapublica.component';
 
 export const routes: Routes = [
   // {
@@ -104,6 +105,15 @@ export const routes: Routes = [
       {
         path: '',
         component: ConsultapublicoComponent,
+      },
+    ]
+  },
+  {
+    path: 'infoconsulta',
+    children: [
+      {
+        path: ':id',
+        component: InfoConsultapublicaComponent,
       },
     ]
   },
