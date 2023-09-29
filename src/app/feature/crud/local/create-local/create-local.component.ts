@@ -49,7 +49,6 @@ export class CreateLocalComponent implements OnInit {
 
       let localInput = new LocalInput(localDto);
 
-      console.log(localInput)
 
       this.localService.create(localInput).subscribe(
         (data) => {

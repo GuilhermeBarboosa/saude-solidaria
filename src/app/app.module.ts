@@ -37,6 +37,10 @@ import { EditUserComponent } from './feature/crud/user/edit-user/edit-user.compo
 import { InfoUserComponent } from './feature/crud/user/info-user/info-user.component';
 import { ConsultapublicoComponent } from './feature/publico/consultapublico/consultapublico.component';
 import { InfoConsultapublicaComponent } from './feature/publico/info-consultapublica/info-consultapublica.component';
+import { TableConsultaComponent } from './feature/crud/consultas/table-consulta/table-consulta.component';
+import { CreateConsultaComponent } from './feature/crud/consultas/create-consulta/create-consulta.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { InfoConsultaComponent } from './feature/crud/consultas/info-consulta/info-consulta.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +70,10 @@ import { InfoConsultapublicaComponent } from './feature/publico/info-consultapub
     CreateLocalComponent,
     InfoLocalComponent,
     EditLocalComponent,
+    //Constula
+    TableConsultaComponent,
+    CreateConsultaComponent,
+    InfoConsultaComponent,
     //ConsultaPublico
     ConsultapublicoComponent,
     InfoConsultapublicaComponent
@@ -81,6 +89,7 @@ import { InfoConsultapublicaComponent } from './feature/publico/info-consultapub
     CommonModule,
     MatTableModule,
     MatPaginatorModule,
+    MatDatepickerModule,
     MatDialogModule,
     BrowserAnimationsModule,
     MatNativeDateModule,

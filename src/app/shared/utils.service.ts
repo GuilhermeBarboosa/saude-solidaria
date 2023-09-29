@@ -16,8 +16,9 @@ export class UtilsService {
   }
 
   formatarDataToSQL(data: any) {
-    data = data.split("/").reverse().join("/");
-    data = new Date(data);
+    data = data.split('/').reverse().join('/');
+    const dataSplit = data.split('/');
+    data = `${dataSplit[0]}-${dataSplit[1]}-${dataSplit[2]}`
     return data;
   }
 
@@ -28,5 +29,45 @@ export class UtilsService {
     );
 
     return string;
+  }
+
+  validarData(data: string): boolean {
+    const dataSplit = data.split('/');
+
+    // Valida o formato da data
+    if (dataSplit.length !== 3) {
+      return false;
+    }
+
+    // Valida o dia
+    const dia = Number(dataSplit[0]);
+    if (dia < 1 || dia > 31) {
+      return false;
+    }
+
+    // Valida o mês
+    const mes = Number(dataSplit[1]);
+    if (mes < 1 || mes > 12) {
+      return false;
+    }
+
+    // Valida o ano
+    const ano = Number(dataSplit[2]);
+    if (ano < 1900 || ano > 3000) {
+      return false;
+    }
+
+    const dataString = new Date(`${ano}-${mes}-${dia}`);
+
+    const dataAtual = Date.now();
+
+    const dataStringEmMilissegundos = dataString.getTime();
+    const dataAtualEmMilissegundos = dataAtual;
+
+    if (dataStringEmMilissegundos < dataAtualEmMilissegundos) {
+     return false
+    }
+
+    return true;
   }
 }

@@ -22,7 +22,6 @@ export class UserMedicoService {
   }
 
   create(userMedico: UserMedicoInput) {
-    console.log(userMedico)
     return this.http.post(`${this.urlLocal}`, userMedico);
   }
 
@@ -31,8 +30,6 @@ export class UserMedicoService {
   }
 
   edit(userMedico: UserMedicoInput, id: number) {
-    console.log(userMedico)
-    console.log(id)
     return this.http.put(`${this.urlLocal}/${id}`, userMedico);
   }
 

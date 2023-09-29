@@ -1,0 +1,35 @@
+.m-60{
+  margin-left: 10rem;
+  margin-right: 10rem;
+  height: 100% !important;
+}
+
+.h-full{
+  height: 100vh !important;
+}
+
+h3{
+  margin-top: 2rem !important;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #0284c7;
+  margin: 0%;
+}
+
+.blue{
+  color: #0284c7;
+}
+
+p{
+  padding: 0%;
+  margin: 0%;
+  margin-bottom: 10px;
+  font-size: medium;
+}
+
+.center{
+  justify-content: center;
+  justify-self: center;
+  display: flex;
+  margin: 20px !important;
+}

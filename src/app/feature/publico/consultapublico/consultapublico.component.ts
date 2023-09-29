@@ -68,7 +68,6 @@ export class ConsultapublicoComponent implements OnInit {
 
       this.consultaArray.data = consultaResponse;
       this.consultaArray.filter = 'true';
-      console.log(this.consultaArray.data)
     });
   }
 

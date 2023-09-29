@@ -6,6 +6,7 @@ export interface Consulta extends DefaultDto {
   id_medico: number;
   crm: string;
   nome_medico: string;
+  email_medico: string;
   cpf_medico: string;
   especialidade: string;
 

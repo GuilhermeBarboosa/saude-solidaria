@@ -17,6 +17,9 @@ import { InfoUserComponent } from './feature/crud/user/info-user/info-user.compo
 import { EditUserComponent } from './feature/crud/user/edit-user/edit-user.component';
 import { ConsultapublicoComponent } from './feature/publico/consultapublico/consultapublico.component';
 import { InfoConsultapublicaComponent } from './feature/publico/info-consultapublica/info-consultapublica.component';
+import { TableConsultaComponent } from './feature/crud/consultas/table-consulta/table-consulta.component';
+import { CreateConsultaComponent } from './feature/crud/consultas/create-consulta/create-consulta.component';
+import { InfoConsultaComponent } from './feature/crud/consultas/info-consulta/info-consulta.component';
 
 export const routes: Routes = [
   // {
@@ -136,6 +139,28 @@ export const routes: Routes = [
         path: 'edit/:id',
         component: EditLocalComponent,
       },
+    ],
+    // canActivate: [LoginGuardService],
+  },
+  {
+    path: 'consulta',
+    children: [
+      {
+        path: '',
+        component: TableConsultaComponent,
+      },
+      {
+        path: 'register',
+        component: CreateConsultaComponent,
+      },
+      {
+        path: 'info/:id',
+        component: InfoConsultaComponent,
+      },
+      // {
+      //   path: 'edit/:id',
+      //   component: EditLocalComponent,
+      // },
     ],
     // canActivate: [LoginGuardService],
   },

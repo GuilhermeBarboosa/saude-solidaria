@@ -42,8 +42,6 @@ export class InfoUserComponent implements OnInit {
         var userResponse = JSON.parse(JSON.stringify(data));
         this.user = userResponse;
 
-        console.log(this.user)
-
         this.user!.created = this.utils.formatarData(
           this.user!.created
         );

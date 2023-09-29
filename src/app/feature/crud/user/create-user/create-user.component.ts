@@ -76,8 +76,6 @@ export class CreateUserComponent implements OnInit {
   }
 
   save() {
-    console.log(this.userForm);
-
     if (this.userForm.valid) {
       let userDTO = {
         nome: this.userForm.get('nome')?.value,
@@ -101,7 +99,6 @@ export class CreateUserComponent implements OnInit {
         }
       );
     } else {
-      console.log(this.userForm);
       this.notifier.ShowError('Formulário inválido!');
     }
   }
