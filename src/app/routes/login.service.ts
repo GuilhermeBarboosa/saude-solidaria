@@ -31,13 +31,6 @@ export class LoginService {
   }
 
   isLogin() {
-    this.verifyToken().subscribe(
-      (res) => {
-      },
-      (err) => {
-        this.logout();
-      }
-    );
 
     if (localStorage.getItem('token') != null) {
       return true;

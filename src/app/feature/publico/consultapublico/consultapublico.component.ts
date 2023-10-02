@@ -25,7 +25,7 @@ export class ConsultapublicoComponent implements OnInit {
     'info',
   ];
   Adicionar = 'Adicionar';
-  Info = 'Info';
+  Info = 'Informações';
 
   consultaArray = new MatTableDataSource<Consulta>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;

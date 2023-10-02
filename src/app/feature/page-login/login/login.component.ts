@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
           var data = JSON.parse(JSON.stringify(data));
           this.tokenJwtService.setToken(data);
           this.notifier.ShowSuccess('Login efetuado com sucesso!');
-          this.router.navigate(['/home']);
+          this.router.navigate(['/cms']);
         },
         (error: any) => {
           this.notifier.ShowError('Login ou senha inválidos');

@@ -20,6 +20,7 @@ import { InfoConsultapublicaComponent } from './feature/publico/info-consultapub
 import { TableConsultaComponent } from './feature/crud/consultas/table-consulta/table-consulta.component';
 import { CreateConsultaComponent } from './feature/crud/consultas/create-consulta/create-consulta.component';
 import { InfoConsultaComponent } from './feature/crud/consultas/info-consulta/info-consulta.component';
+import { LoginGuardService } from './guards/login-guard.service';
 
 export const routes: Routes = [
   // {
@@ -36,8 +37,7 @@ export const routes: Routes = [
         path: '',
         component: LoginComponent,
       },
-    ],
-    // canActivate: [LoginGuardService],
+    ]
   },
   {
     path: 'register',
@@ -46,8 +46,7 @@ export const routes: Routes = [
         path: '',
         component: RegisterComponent,
       },
-    ],
-    // canActivate: [LoginGuardService],
+    ]
   },
   {
     path: 'user',
@@ -69,7 +68,7 @@ export const routes: Routes = [
         component: EditUserComponent,
       },
     ],
-    // canActivate: [LoginGuardService],
+    canActivate: [LoginGuardService],
   },
   {
     path: 'especialidade',
@@ -91,7 +90,7 @@ export const routes: Routes = [
         component: EditEspecComponent,
       },
     ],
-    // canActivate: [LoginGuardService],
+    canActivate: [LoginGuardService],
   },
   {
     path: 'cms',
@@ -100,7 +99,8 @@ export const routes: Routes = [
         path: '',
         component: TableLocalComponent,
       },
-    ]
+    ],
+    canActivate: [LoginGuardService],
   },
   {
     path: 'consultapublico',
@@ -140,7 +140,7 @@ export const routes: Routes = [
         component: EditLocalComponent,
       },
     ],
-    // canActivate: [LoginGuardService],
+   canActivate: [LoginGuardService],
   },
   {
     path: 'consulta',
@@ -162,12 +162,11 @@ export const routes: Routes = [
       //   component: EditLocalComponent,
       // },
     ],
-    // canActivate: [LoginGuardService],
+    canActivate: [LoginGuardService],
   },
   {
     path: 'home',
     component: HomeComponent,
-    // canActivate: [LoginGuardService],
   },
   {
     path: '',
