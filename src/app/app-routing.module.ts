@@ -21,6 +21,7 @@ import { TableConsultaComponent } from './feature/crud/consultas/table-consulta/
 import { CreateConsultaComponent } from './feature/crud/consultas/create-consulta/create-consulta.component';
 import { InfoConsultaComponent } from './feature/crud/consultas/info-consulta/info-consulta.component';
 import { LoginGuardService } from './guards/login-guard.service';
+import { EditConsultaComponent } from './feature/crud/consultas/edit-consulta/edit-consulta.component';
 
 export const routes: Routes = [
   // {
@@ -157,10 +158,10 @@ export const routes: Routes = [
         path: 'info/:id',
         component: InfoConsultaComponent,
       },
-      // {
-      //   path: 'edit/:id',
-      //   component: EditLocalComponent,
-      // },
+      {
+        path: 'edit/:id',
+        component: EditConsultaComponent,
+      },
     ],
     canActivate: [LoginGuardService],
   },

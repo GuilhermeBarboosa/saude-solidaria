@@ -1,0 +1,90 @@
+<app-navbar></app-navbar>
+
+<div class="flex">
+  <app-sidebar></app-sidebar>
+
+  <form class="h-full w-full m-5" [formGroup]="consultaForm" *ngIf="consultaForm">
+
+      <div class="flex justify-between">
+        <p class="text-black font-medium justify-start text-lg font-bold">EDITAR
+          USUÁRIO</p>
+      </div>
+
+      <div class="">
+        <label class="block text-sm text-black" for="nome">Código</label>
+        <input formControlName="id" class="default-input p-2.5 text-center" type="text" id="nome" required>
+      </div>
+
+      <form class="h-full w-full" [formGroup]="consultaForm" *ngIf="consultaForm">
+        <div>
+
+          <div class="grid grid-cols-3">
+
+            <div class="col mr-4">
+              <label class="block text-sm text-black" for="data">Data</label>
+              <input
+                formControlName="data"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="nome"
+                aria-label="nome"
+                mask="00/00/0000"
+                required
+              />
+            </div>
+
+            <div class="col mr-4">
+              <label
+              class="block text-sm text-black"
+                for="first_name"
+                >Médico</label
+              >
+              <select
+                id="medico"
+                formControlName="medico"
+                class="default-input w-full p-2.5"
+              >
+                <option value="" disabled selected>Selecione o médico</option>
+                <option *ngFor="let medico of medicoArray" [value]="medico.id">
+                  {{ medico.nome_user }}
+                </option>
+              </select>
+            </div>
+
+            <div class="col">
+              <label
+              class="block text-sm text-black"
+                for="local"
+                >Local</label
+              >
+              <select
+                id="local"
+                formControlName="local"
+                class="default-input w-full p-2.5"
+              >
+                <option value="" disabled selected>Selecione a permissão</option>
+                <option *ngFor="let local of localArray" [value]="local.id">
+                  {{ local.nome_local }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+
+
+      <div class="items-center flex justify-between my-2">
+        <div class="align-end">
+          <app-button-red [value] = "Nao" (click)="return()"></app-button-red>
+        </div>
+
+        <div>
+          <app-button-green [value] = "Sim" (click)="edit()"></app-button-green>
+        </div>
+      </div>
+
+</form>
+
+</div>

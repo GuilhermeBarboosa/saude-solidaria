@@ -16,9 +16,8 @@ export class UtilsService {
   }
 
   formatarDataToSQL(data: any) {
-    data = data.split('/').reverse().join('/');
-    const dataSplit = data.split('/');
-    data = `${dataSplit[0]}-${dataSplit[1]}-${dataSplit[2]}`
+    data = data.split("/").reverse().join("/");
+    data = new Date(data);
     return data;
   }
 
@@ -38,6 +37,8 @@ export class UtilsService {
     if (dataSplit.length !== 3) {
       return false;
     }
+
+    console.log(dataSplit)
 
     // Valida o dia
     const dia = Number(dataSplit[0]);

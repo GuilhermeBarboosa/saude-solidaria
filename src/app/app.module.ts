@@ -41,6 +41,7 @@ import { TableConsultaComponent } from './feature/crud/consultas/table-consulta/
 import { CreateConsultaComponent } from './feature/crud/consultas/create-consulta/create-consulta.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { InfoConsultaComponent } from './feature/crud/consultas/info-consulta/info-consulta.component';
+import { EditConsultaComponent } from './feature/crud/consultas/edit-consulta/edit-consulta.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { InfoConsultaComponent } from './feature/crud/consultas/info-consulta/in
     TableConsultaComponent,
     CreateConsultaComponent,
     InfoConsultaComponent,
+    EditConsultaComponent,
     //ConsultaPublico
     ConsultapublicoComponent,
     InfoConsultapublicaComponent
