@@ -24,6 +24,7 @@ export class TableConsultaComponent implements OnInit {
     'id',
     'nome_local',
     'nome_medico',
+    'especialização',
     'crm',
     'data',
     'status',

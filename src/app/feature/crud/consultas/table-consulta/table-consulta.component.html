@@ -66,6 +66,11 @@
           <mat-cell mat-cell *matCellDef="let consulta"> {{consulta.nome_medico}} </mat-cell>
         </ng-container>
 
+        <ng-container matColumnDef="especialização">
+          <mat-header-cell mat-header-cell *matHeaderCellDef> Especialização </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let consulta"> {{consulta.especialidade}} </mat-cell>
+        </ng-container>
+
         <ng-container matColumnDef="crm">
           <mat-header-cell mat-header-cell *matHeaderCellDef> CRM </mat-header-cell>
           <mat-cell mat-cell *matCellDef="let consulta"> {{consulta.crm}} </mat-cell>
