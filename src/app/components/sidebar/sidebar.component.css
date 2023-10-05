@@ -1,3 +1,7 @@
 .white-icon {
   color: white;
 }
+
+a:hover{
+  color: #4862c3;
+}

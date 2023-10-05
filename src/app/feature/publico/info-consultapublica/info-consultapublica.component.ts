@@ -17,13 +17,10 @@ export class InfoConsultapublicaComponent implements OnInit {
   id = this.activedRouter.snapshot.params['id'];
   Editar = 'Editar';
   Voltar = 'Voltar';
-
+  query = "";
   constructor(
     private activedRouter: ActivatedRoute,
-    private consultaService: ConsultaService,
-    private router: Router,
-    private utils: UtilsService,
-    private formBuilder: FormBuilder
+    private consultaService: ConsultaService
   ) {}
 
   ngOnInit() {
@@ -31,8 +28,11 @@ export class InfoConsultapublicaComponent implements OnInit {
       (data) => {
         this.consulta = JSON.parse(JSON.stringify(data));
 
-
-        // this.createTable();
+        let rua = this.consulta?.rua.replaceAll(" ", "+");
+        let bairro = this.consulta?.bairro.replaceAll(" ", "+");
+        let numero = this.consulta?.numero.replaceAll(" ", "+");
+        let concat = `${rua}+${bairro}+${numero}`
+        this.query = `https://www.google.com/maps?q=${concat}`
       }
     );
   }

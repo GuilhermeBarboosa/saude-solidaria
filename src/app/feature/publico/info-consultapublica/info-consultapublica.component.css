@@ -15,6 +15,10 @@ h3{
   margin: 0%;
 }
 
+.color-bg{
+  background-color: #0284c7;
+}
+
 .blue{
   color: #0284c7;
 }
@@ -31,4 +35,8 @@ p{
   justify-self: center;
   display: flex;
   margin: 20px !important;
+}
+
+.box-informacoes {
+  padding: 30px 0px;
 }

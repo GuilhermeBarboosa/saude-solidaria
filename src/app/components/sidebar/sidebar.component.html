@@ -1,45 +1,54 @@
+
+<aside id="cta-button-sidebar" class="w-64 h-screen" aria-label="Sidebar">
 <div id="default-sidebar" class="flex h-screen sidebar" aria-label="Sidebar">
   <div class="h-full px-3 py-4 overflow-y-auto">
+      <a routerLink="/home" routerLinkActive="active" class="flex items-center pl-2.5 mb-5">
+        <img src="./../../../assets/logo.png" class="h-6 mr-3 sm:h-7" />
+        <span class="self-center text-xl font-semibold whitespace-nowrap text-white dark:text-white">Saúde Solidaria</span>
+      </a>
      <ul class="space-y-2 font-medium">
-      <!-- <li>
-        <a routerLink="/user" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:primary-color-bg hover:text-black">
-          <mat-icon class="hover:text-black">account_circle</mat-icon>
-          <span class="hover:text-black ml-3">Users</span>
-        </a>
-      </li> -->
-        <!-- <li>
-          <a routerLink="/profile" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:primary-color-bg hover:text-black">
-            <mat-icon class="hover:text-black">account_circle</mat-icon>
-            <span class="hover:text-black ml-3">Meu perfil</span>
-          </a>
-        </li> -->
         <li>
-          <a routerLink="/especialidade" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:primary-color-bg hover:text-black">
+          <a routerLink="/especialidade" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:bg-gray-100 group">
            <mat-icon>work</mat-icon>
              <span class="hover:text-black flex-1 ml-3 whitespace-nowrap">Especialização</span>
           </a>
        </li>
         <li>
-           <a routerLink="/user" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:primary-color-bg hover:text-black">
+           <a routerLink="/user" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:bg-gray-100 group">
             <mat-icon>healing</mat-icon>
               <span class="hover:text-black ml-3">Médicos</span>
            </a>
         </li>
         <li>
-           <a  routerLink="/consulta" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:primary-color-bg hover:text-black">
+           <a  routerLink="/consulta" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:bg-gray-100 group">
             <mat-icon>event</mat-icon>
               <span class="hover:text-black flex-1 ml-3 whitespace-nowrap">Consultas</span>
            </a>
         </li>
         <li>
-           <a routerLink="/local" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:primary-color-bg hover:text-black">
+           <a routerLink="/local" routerLinkActive="active" class="flex items-center p-2 text-white rounded-lg hover:bg-gray-100 group">
             <span class="hover:text-black material-symbols-outlined">
               distance
               </span>
               <span class="hover:text-black flex-1 ml-3 whitespace-nowrap">Local</span>
            </a>
         </li>
-
+        <li>
+          <a (click)="logout()" class=" cursor-pointer flex items-center p-2 text-white rounded-lg hover:bg-gray-100 group">
+            <div *ngIf="jwt != null">
+              <button (click)="logout()" class="flex button-logout">
+                <span class="icon-button material-symbols-outlined">
+                  logout
+                </span>
+              </button>
+             </div>
+             <span class="hover:text-black flex-1 ml-3 whitespace-nowrap">Logout</span>
+          </a>
+       </li>
      </ul>
   </div>
 </div>
+</aside>
+
+
+
