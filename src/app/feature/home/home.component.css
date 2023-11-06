@@ -10,3 +10,64 @@
 .bg-sky-500{
   background-color: #0284c7;
 }
+
+.img-wallpaper{
+
+  background-image: url("../../../assets/wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+/*
+.mt-10 {
+  margin-top: 15px;
+}
+
+.div-principal {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.div-titulo {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0099ff;
+  padding-bottom: 30px;
+}
+
+.div-conteudo {
+  text-align: justify;
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.text-blue-700 {
+  color: #0077BB;
+}
+
+.text-lg {
+  font-size: 1.5rem;
+} */
