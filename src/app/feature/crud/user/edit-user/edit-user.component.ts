@@ -44,8 +44,10 @@ export class EditUserComponent implements OnInit {
   ngOnInit() {
     this.roleService.getAll().subscribe((data) => {
       var roleResponse = JSON.parse(JSON.stringify(data));
+      
       this.roleArray = roleResponse;
     });
+
 
     this.userService.getById(this.id).subscribe((res) => {
       var userResponse = JSON.parse(JSON.stringify(res));

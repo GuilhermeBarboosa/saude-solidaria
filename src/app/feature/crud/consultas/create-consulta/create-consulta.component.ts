@@ -37,8 +37,15 @@ export class CreateConsultaComponent implements OnInit {
   ngOnInit() {
     this.userMedicoService.getAll().subscribe(
       (data) => {
-        var roleResponse = JSON.parse(JSON.stringify(data));
-        this.medicoArray = roleResponse;
+        var medicoResponse = JSON.parse(JSON.stringify(data));
+        // this.medicoArray = medicoResponse;
+
+        medicoResponse.forEach((element: UserMedico) => {
+          if(element.actived){
+            (this.medicoArray ??= []).push(element);
+          }
+        });
+
 
         this.createTable();
       },
@@ -50,7 +57,13 @@ export class CreateConsultaComponent implements OnInit {
     this.localService.getAll().subscribe(
       (data) => {
         var especResponse = JSON.parse(JSON.stringify(data));
-        this.localArray = especResponse;
+        // this.localArray = especResponse;
+
+        especResponse.forEach((element: Local) => {
+          if(element.actived){
+            (this.localArray ??= []).push(element);
+          }
+        });
       },
       (error) => {
         this.notifier.ShowError(error.error);

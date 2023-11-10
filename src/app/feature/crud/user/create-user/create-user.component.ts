@@ -42,6 +42,13 @@ export class CreateUserComponent implements OnInit {
         var roleResponse = JSON.parse(JSON.stringify(data));
         this.roleArray = roleResponse;
 
+        roleResponse.forEach((element: Role) => {
+          if(element.actived){
+            (this.roleArray ??= []).push(element);
+          }
+        });
+
+
         this.createTable();
       },
       (error) => {
@@ -52,7 +59,14 @@ export class CreateUserComponent implements OnInit {
     this.especialidadeService.getAll().subscribe(
       (data) => {
         var especResponse = JSON.parse(JSON.stringify(data));
-        this.especArray = especResponse;
+
+
+        especResponse.forEach((element: Especialidade) => {
+          if(element.actived){
+            (this.especArray ??= []).push(element);
+          }
+        });
+
       },
       (error) => {
         this.notifier.ShowError(error.error);
